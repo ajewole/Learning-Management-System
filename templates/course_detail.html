@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+<h1 class="text-center mt-3">Course: {{course.titile}}</h1>
+
+{% block content %}
+<div class="row mt-5">
+  <div class="col-md-4 offset-md-4">
+    <div><img src="{{course.course_image.url}}" width="300px" /></div>
+    <p>Duration: {{ course.duration}}</p>
+    <p>Price: ${{ course.course_fee }}</p>
+    <div>Course description: {{ course.description }}</div>
+    <div>learnig Outcomes: {{course.learning_outcomes}}</div>
+    <button class="btn btn-success"> Enroll for this course</button
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<h3 align="center">Login</h3>
+
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <form method="POST" action""  novalidate>
+      {% csrf_token %} 
+      {{form | crispy }}
+       <!-- {{form.username.label}}
+       {{form.username}}
+    
+       {{form.email.label}}
+       {{form.email}}
+    
+       {{form.password.label}}
+       {{form.password}} -->
+
+
+
+    
+    
+    
+    
+       <button class="btn btn-primary" type="submit" name="Create User">Sign In</button>
+    </form>
+
+<div>
+  <p>Are You New to MyLearning.com? <a href="{% url 'signup' %}">Sign Up Here</a></p>
+  <p>Forgot Your Password?  <a href="{% url 'password_reset' %}">Click Here</a></p>
+</div>
+  
+
+</div>
+
+
+
+
+
+
+
+{% endblock content %}

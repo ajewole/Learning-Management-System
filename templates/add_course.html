@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="col col-md-6 offset-2">
+    <h3 align="center">Add Course</h3>
+
+<form method="post" enctype="multipart/form-data" novalidate>
+  {% csrf_token %} 
+  {{form | crispy}}
+  <button class="btn btn-primary" type="submit">Add Course</button>
+</form>
+</div>
+
+  
+    {% endblock content %}
+
+
+

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="mx-auto" align="center"><a class='btn btn-primary mb-2 mt-3 mr-2'  href="{% url 'add_course' %}">Add Course</a><a class='btn btn-success mb-2 mt-3 '  href="{% url 'backend' %}">Manage Course</a></div>
+<h1 class="text-center mt-3">Welcome to MyLearning.com</h1>
+<h2 class="text-center mt-5 mb-3">Available Courses</h2>
+
+
+<div class="row container ml-auto">
+    {% for course in courses %}
+    
+    <div class="col-md-4 mb-4">
+        <div class="coursecard">
+               <div><img src="{{course.course_image.url}}" width="200" height="200"></div> 
+            <p class ="font-weight-bold">{{course.title}}</p>
+           <p>course duration {{course.duration}}</p>
+            <p class="text-muted">{{course.description}}</p>
+           <a class = "btn btn-danger" href="{% url 'course_detail' id=course.pk %}"> View Course</a>
+        </div>
+    </div>
+
+
+    {% endfor %}
+</div>
+    {% endblock  %}
+
+
+
+
+
+    <script src="{% static 'jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+
+ 
+    
+</body>
+</html>
